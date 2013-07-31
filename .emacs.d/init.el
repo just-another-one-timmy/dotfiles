@@ -47,6 +47,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-auto-complete nil)
+ '(company-idle-delay 0)
+ '(company-minimum-prefix-length 2)
  '(inhibit-startup-screen t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -54,6 +57,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; F11 for fullscreen.
 (defun toggle-fullscreen ()
@@ -64,3 +68,6 @@
      nil 'fullscreen
      (when (not (frame-parameter nil 'fullscreen)) 'fullboth))))
 (global-set-key [f11] 'toggle-fullscreen)
+
+(add-to-list 'default-frame-alist '(font . "Consolas-16"))
+(set-default-font "Consolas-16")
