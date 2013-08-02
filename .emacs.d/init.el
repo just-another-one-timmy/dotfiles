@@ -1,4 +1,3 @@
-
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -19,6 +18,7 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+(setq ido-create-new-buffer 'always)
 
 ;;
 ;; ace jump mode major function
@@ -56,3 +56,11 @@
 
 (add-to-list 'default-frame-alist '(font . "Consolas-16"))
 (set-default-font "Consolas-16")
+
+
+(add-to-list 'load-path "~/.emacs.d//smex")
+(require 'smex)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
