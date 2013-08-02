@@ -18,7 +18,8 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
-(setq ido-create-new-buffer 'always)
+; C-j allows to do the same.
+; (setq ido-create-new-buffer 'always)
 
 ;;
 ;; ace jump mode major function
