@@ -1,3 +1,4 @@
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -17,6 +18,7 @@
 ;; ido mode
 (require 'ido)
 (ido-mode t)
+(setq ido-enable-flex-matching t)
 
 ;;
 ;; ace jump mode major function
