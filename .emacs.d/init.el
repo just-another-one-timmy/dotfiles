@@ -24,7 +24,7 @@
 ;;
 ;; ace jump mode major function
 ;; 
-(add-to-list 'load-path "~/.emacs.d//ace-jump-mode")
+(add-to-list 'load-path "~/.emacs.d/ace-jump-mode")
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
@@ -45,6 +45,14 @@
   '(ace-jump-mode-enable-mark-sync))
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
+;; jump on buffers
+(add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-buffer-20130627.2104/")
+(require 'ace-jump-buffer)
+(global-set-key (kbd "C-x b") 'ace-jump-buffer)
+(global-set-key (kbd "C-c C-x b") 'switch-to-buffer)
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+(global-set-key (kbd "C-c C-x C-b") 'list-buffers)
+
 ;; F11 for fullscreen.
 (defun toggle-fullscreen ()
   "Toggle full screen on X11"
@@ -61,7 +69,7 @@
 ;;
 ;; smex - ido in minibuffer
 ;;
-(add-to-list 'load-path "~/.emacs.d//smex")
+(add-to-list 'load-path "~/.emacs.d/smex")
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -71,7 +79,25 @@
 ;;
 ;; emms - emacs multimedia system
 ;;
-(add-to-list 'load-path "~/.emacs.d//emms/lisp")
+(add-to-list 'load-path "~/.emacs.d/emms/lisp")
 (require 'emms-setup)
 (emms-standard)
 (emms-default-players)
+
+;; company
+(add-to-list 'load-path "~/.emacs.d/company-mode/")
+(require 'company)
+(global-company-mode t)
+
+;; eclim - eclipse autocomplete and other stuff
+(add-to-list 'load-path "~/.emacs.d/emacs-eclim/")
+(require 'eclim)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+(global-eclim-mode)
+
+;; Melpa repository
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
