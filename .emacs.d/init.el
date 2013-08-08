@@ -45,14 +45,6 @@
   '(ace-jump-mode-enable-mark-sync))
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
-;; jump on buffers
-(add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-buffer-20130627.2104/")
-(require 'ace-jump-buffer)
-(global-set-key (kbd "C-x b") 'ace-jump-buffer)
-(global-set-key (kbd "C-c C-x b") 'switch-to-buffer)
-(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
-(global-set-key (kbd "C-c C-x C-b") 'list-buffers)
-
 ;; F11 for fullscreen.
 (defun toggle-fullscreen ()
   "Toggle full screen on X11"
@@ -101,3 +93,8 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
+
+;; Use "y or n" for answers instead of complete words "yes or no"
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(global-set-key (kbd "C-,") 'ace-jump-char-mode)

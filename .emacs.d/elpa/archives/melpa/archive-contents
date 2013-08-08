@@ -268,7 +268,7 @@
 	   [(20090617 1305)
 	    nil "a VC backend for darcs [darcs]" single])
  (vc-check-status .
-		  [(20130730 1656)
+		  [(20130807 55)
 		   nil "Warn you when quitting emacs and leaving repo dirty. [github]" tar])
  (uuid .
        [(20120910 951)
@@ -3343,7 +3343,7 @@
 	 [(20130701 1012)
 	  nil "Erlang major mode [github]" tar])
  (ergoemacs-mode .
-		 [(20130806 1119)
+		 [(20130806 1538)
 		  ((org-cua-dwim
 		    (0 5)))
 		  "Emacs mode based on common modern software interface and ergonomics. [github]" tar])
@@ -3394,7 +3394,7 @@
 	  [(20130407 1548)
 	   nil "A networked notification system for emacs [github]" tar])
  (enh-ruby-mode .
-		[(20130701 1347)
+		[(20130806 1450)
 		 nil "Major mode for editing Ruby files [github]" tar])
  (enclose .
 	  [(20121008 1814)
@@ -3749,7 +3749,7 @@
 		[(20130328 1119)
 		 nil "make file details hide-able in dired [wiki]" single])
  (dired+ .
-	 [(20130724 1508)
+	 [(20130806 2037)
 	  nil "Extensions to Dired. [wiki]" single])
  (dircmp .
 	 [(20130806 1457)
