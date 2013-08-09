@@ -92,9 +92,27 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; Use "y or n" for answers instead of complete words "yes or no"
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; jump to chars
 (global-set-key (kbd "C-,") 'ace-jump-char-mode)
+
+;; pymacs
+(add-to-list 'load-path "~/.emacs.d/pymacs")
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+(autoload 'pymacs-autoload "pymacs")
+
+;; ropemacs
+(pymacs-load "ropemacs" "rope-")
+
+;; elpy
+(elpy-enable)
